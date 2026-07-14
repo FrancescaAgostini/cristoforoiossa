@@ -1,0 +1,284 @@
+/* ---------- Font import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Open Sans', monospace;
+    font-size: clamp(14px, 1.6vw, 18px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ---------- Preloader ----------------- */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #000;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+ 
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+ 
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+ 
+.atom {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: rotate 4s linear infinite;
+}
+ 
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+ 
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+ 
+.orbit1 .electron {
+  animation: spin 1.5s linear infinite;
+}
+ 
+.orbit2 {
+  width: 70px;
+  height: 70px;
+}
+ 
+.orbit2 .electron {
+  animation: spin 2s linear infinite;
+}
+ 
+.orbit3 {
+  width: 50px;
+  height: 50px;
+}
+ 
+.orbit3 .electron {
+  animation: spin 2.5s linear infinite;
+}
+ 
+.electron {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #0B00FC;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+ 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+ 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* 3 columns: Left, Center (spacer), Right */
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5vh 6% 1vh;
+}
+
+.site-header h1 {
+    margin: 2%;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    white-space: nowrap;
+    justify-self: start; /* Pushes title to the left edge of its column */
+    padding-bottom: 1rem; /* Fine-tune this value to get the exact look you want */
+
+}
+
+.site-header .nav {
+    grid-column: 3; /* Forces the nav into the 3rd column */
+    justify-self: end; /* Pushes menu to the right edge of its column */
+    display: flex;
+    gap: 0.25rem 1rem;
+}
+
+/*.site-header .nav-link {
+    color: #000;
+}
+
+.site-header .nav-link:hover {
+    color: #6c757d;
+}
+
+.site-header .nav-link.active {
+    color: #000;
+    text-decoration: underline;
+}*/
+
+.nav-icon {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+/* ---------- Home page ---------- */
+
+.home-wrap {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.1vh 6% 6vh;
+}
+
+.home-wrap p {
+    flex: 1 1 320px;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+#me {
+    flex: 1 1 280px;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ---------- WIP Research/Photography ----------- */
+
+#blackboard {
+    display: block;
+    margin: 4% auto 2%;
+    width: min(65%, 900px);
+    max-width: 92%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#researchintro {
+    display: block;
+    max-width: 800px;
+    margin: 4% auto 4%;
+    padding: 0 6%;
+    line-height: 1.5;
+}
+
+
+/* ---------- Breakpoints ---------- */
+
+@media screen and (max-width: 900px) {
+    #me {
+        max-width: 340px;
+    }
+    .home-wrap p {
+        max-width: 460px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .site-header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 3vh 6% 1vh;
+        gap: 0.75rem;
+    }
+
+    .site-header .nav {
+        justify-content: center;
+    }
+
+    .home-wrap {
+        flex-direction: column-reverse;
+        padding: 4vh 6% 6vh;
+        min-height: auto;
+    }
+
+    .home-wrap p {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    #me {
+        max-width: 280px;
+    }
+
+    #blackboard {
+        width: 90%;
+        margin: 6% auto 4%;
+    }
+
+    #researchintro {
+        margin: 6% auto;
+        padding: 0 8%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #me {
+        max-width: 220px;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cristoforo Iossa</title>
+		<link rel="icon" type="image/png" href="res/atom.svg">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- Bootstrap CSS link -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+	</head>
+
+	<body>
+
+	<!-- Preloader -->
+<div class="preloader">
+		<div class="atom">
+		<div class="nucleus"></div>
+		<div class="orbit orbit1">
+			<div class="electron"></div>
+		</div>
+		<div class="orbit orbit2">
+			<div class="electron"></div>
+		</div>
+		<div class="orbit orbit3">
+			<div class="electron"></div>
+		</div>
+		</div>
+		<p class="loading-text">Loading...</p>
+	</div>
+
+	<!-- Title -->
+
+	<header class="site-header">
+		<h1>Cristoforo Iossa</h1>
+
+	<!-- Navigation bar -->
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link active" href="index.html">
+					<img src="res/home_blue.svg" alt="Home" class="nav-icon active">
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="research.html">
+					<img src="res/atom.svg" alt="Research" class="nav-icon">
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="photography.html">
+					<img src="res/camera.svg" alt="Photography" class="nav-icon">
+				</a>
+			</li>
+		</ul>
+	</header>
+
+	<!-- Body -->
+	<main class="home-wrap">
+		<img id="me" src="res/DSCF0714.jpg" alt="Me in the desert">
+		<p> Hi, I am a postdoctoral researcher <br> in theoretical and mathematical <br> physics at the university of Geneva. <br><br> Before this I was a PhD student at <br> SISSA, Trieste. <br><br> My main research interests are <br> black holes,  holography and CFT. <br><br> I am also passionated about climbing, <br> photography, freediving, music... <br><br> Contact me at <br> cristoforoiossa@gmail.com </p>
+	</main>
+
+<!-- Bootstrap JS and Popper links -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+			<script>
+		var MIN_PRELOADER_MS = 500;
+		var pageStart = Date.now();
+ 
+		window.addEventListener('load', function () {
+			var preloader = document.querySelector('.preloader');
+			if (!preloader) return;
+ 
+			var elapsed = Date.now() - pageStart;
+			var remaining = Math.max(MIN_PRELOADER_MS - elapsed, 0);
+ 
+			setTimeout(function () {
+				preloader.classList.add('is-hidden');
+			}, remaining);
+		});
+	</script>
+
+	</body>
+</html>
